@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Carter | Digital Business Card</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Abstract Background Elements (Light Mode) -->
+    <div class="background-shape shape-1"></div>
+    <div class="background-shape shape-2"></div>
+
+    <main class="card-container" id="vcard">
+        <div class="card-banner">
+            <img src="banner.png" alt="Profile Banner" />
+        </div>
+        
+        <div class="card-content">
+            <div class="card-header-actions">
+                <button id="layout-toggle-btn" class="icon-btn" title="Toggle Profile View">
+                    <i class="fa-solid fa-image-portrait"></i>
+                </button>
+                <button id="list-toggle-btn" class="icon-btn" title="Toggle Links View">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+            </div>
+            
+            <!-- Header section -->
+            <header class="profile-section" id="profile-section">
+                <div class="profile-image-wrapper">
+                    <img src="profile.png" alt="Alex Carter" class="profile-img">
+                </div>
+                <div class="profile-text">
+                    <h1 class="name">Alex Carter</h1>
+                    <p class="role">Lead Product Designer</p>
+                    <p class="company"><i class="fa-solid fa-briefcase"></i> Nexus Innovations</p>
+                    <p class="bio">Crafting digital experiences that merge aesthetics with function. Let's create something extraordinary.</p>
+                </div>
+            </header>
+
+            <!-- Action buttons -->
+            <div class="primary-actions">
+                <button id="save-contact-btn" class="btn btn-primary">
+                    <i class="fa-solid fa-user-plus"></i> Save Contact
+                </button>
+                <button id="share-btn" class="btn btn-secondary">
+                    <i class="fa-solid fa-share-nodes"></i> Share
+                </button>
+            </div>
+
+            <!-- Contact links -->
+            <section class="links-section" id="links-section">
+                <a href="mailto:alex@example.com" class="link-item">
+                    <div class="link-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="link-info">
+                        <span class="link-label">Email</span>
+                        <span class="link-value">alex@example.com</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </a>
+
+                <a href="tel:+12345678900" class="link-item">
+                    <div class="link-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="link-info">
+                        <span class="link-label">Phone</span>
+                        <span class="link-value">+1 (234) 567-8900</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </a>
+
+                <a href="https://linkedin.com/in/example" target="_blank" rel="noopener" class="link-item">
+                    <div class="link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="link-info">
+                        <span class="link-label">LinkedIn</span>
+                        <span class="link-value">/in/alexcarter</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </a>
+
+                <a href="https://portfolio.example.com" target="_blank" rel="noopener" class="link-item">
+                    <div class="link-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div class="link-info">
+                        <span class="link-label">Portfolio</span>
+                        <span class="link-value">alexcarter.design</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </a>
+                
+                <a href="https://twitter.com/example" target="_blank" rel="noopener" class="link-item">
+                    <div class="link-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="link-info">
+                        <span class="link-label">Twitter</span>
+                        <span class="link-value">@alex_designs</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </a>
+            </section>
+        </div>
+
+        <!-- Quick Action Footer -->
+        <footer class="card-footer">
+            <button id="footer-save-btn" class="footer-action">
+                <div class="footer-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <span>Save</span>
+            </button>
+            <button id="footer-qr-btn" class="footer-action">
+                <div class="footer-icon"><i class="fa-solid fa-qrcode"></i></div>
+                <span>QR Code</span>
+            </button>
+            <button id="footer-share-btn" class="footer-action">
+                <div class="footer-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                <span>Share</span>
+            </button>
+        </footer>
+    </main>
+    
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Share V-Card</h2>
+            <div id="qr-code-container">
+                <!-- QR Code will be injected here or generic icon for now -->
+                <i class="fa-solid fa-qrcode" style="font-size: 8rem; color: var(--accent); margin: 2rem 0;"></i>
+            </div>
+            <p>Scan to view this digital card on another device.</p>
+            <button id="copy-link-btn" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">
+                <i class="fa-solid fa-link"></i> Copy Link
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Action successful!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
